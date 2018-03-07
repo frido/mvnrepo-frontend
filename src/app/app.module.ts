@@ -6,6 +6,7 @@ import { MainComponent } from './main.component';
 import { ProjectComponent } from './project.component';
 import { MetadataComponent } from './metadata.component';
 import { RouterModule } from '@angular/router';
+import { FakeBackendService } from './fake-backend.service';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule, RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [FakeBackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

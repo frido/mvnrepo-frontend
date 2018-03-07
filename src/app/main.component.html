@@ -27,17 +27,9 @@
         <h3 class="card-title">Most popular GitHub libraries</h3>
         <div class="card-text">
           <ul class="list-group">
-            <li class="list-group-item justify-content-between">
-              <a href="#">spring-framework</a>
-              <span class="badge badge-dark badge-pill">19386 stars</span>
-            </li>
-            <li class="list-group-item justify-content-between">
-              <a href="#">uCrop</a>
-              <span class="badge badge-dark badge-pill">6702 stars</span>
-            </li>
-            <li class="list-group-item justify-content-between">
-              <a href="#">jedis</a>
-              <span class="badge badge-dark badge-pill">6273 stars</span>
+            <li *ngFor="let project of projects" class="list-group-item justify-content-between">
+              <a href="#">{{project.name}}</a>
+              <span class="badge badge-dark badge-pill">{{project.stargazers}} stars</span>
             </li>
           </ul>
         </div>

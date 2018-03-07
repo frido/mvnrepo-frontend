@@ -1,32 +1,29 @@
-<div class="row">
+<div  class="row">
   <div class="col-sm-12">
     <div class="row">
       <div class="col-sm-8">
         <h3>
-          graeme-lockley/jfixtures
+          {{project.name}}
         </h3>
       </div>
       <div class="col-sm-4 text-right">
-        <span class="badge badge-secondary">125 stars</span>
-        <span class="badge badge-secondary">84 watchers</span>
-        <span class="badge badge-secondary">21 forks</span>
+        <span class="badge badge-secondary">{{project.stargazers}} stars</span>
+        <span class="badge badge-secondary">{{project.watchers}} watchers</span>
+        <span class="badge badge-secondary">{{project.forks}} forks</span>
       </div>
     </div>
     <div>
-      Having spent some time in the rails and play world I missed a simple yet effective fixtures tool to load data into systems
-      that I work.
+      {{project.description}}
     </div>
-    <span class="badge badge-primary">activemq:activemq-itest-ejb:3.2.2</span>
-    <span class="badge badge-primary">activemq:activemq-optional:3.2.2</span>
-    <span class="badge badge-primary">activemq:activemq-gbean:3.2.2</span>
+    <span *ngFor="let artifact of project.artifacts" class="badge badge-primary">{{artifact.groupId}}:{{artifact.artifactId}}:{{artifact.version}}</span>
   </div>
   <div class="col-sm-12">
-      <strong>Home page: </strong>www.google.sk
+      <strong>Home page: </strong>{{project.homepageUrl}}
     </div>
   <div class="col-sm-12">
-    <strong>Created at: </strong>2014-03-15T12:36:22
+    <strong>Created at: </strong>{{project.createdAt}}
   </div>
   <div class="col-sm-12">
-      <strong>Pushed at: </strong>2016-04-30T05:45:55
+      <strong>Pushed at: </strong>{{project.pushedAt}}
     </div>
 </div>

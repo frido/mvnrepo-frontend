@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FakeBackendService} from './fake-backend.service';
+// import {FakeBackendService} from './fake-backend.service';
+import {BackendService} from './backend.service';
 
 @Component({
   // selector: 'app-root',
@@ -10,13 +11,17 @@ export class MainComponent implements OnInit {
   title = 'app';
   projects: Array<any>;
 
-  constructor(private backend: FakeBackendService) {
+  constructor(private backend: BackendService) {
 
   }
 
   ngOnInit() {
-    this.backend.top('stargazers').subscribe(
-      projs => this.projects = projs
+    this.backend.top('stargazers.totalCount', 3).subscribe(
+      res => {
+        console.log(res);
+        this.projects = res.data;
+        console.log(this.projects);
+      }
     );
   }
 }

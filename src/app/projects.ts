@@ -3,7 +3,7 @@ export const PROJECTS = [
     '_id': 'https://github.com/graeme-lockley/jfixtures',
     'name': 'graeme-lockley/jfixtures',
     'createdAt': '2014-03-15T12:36:22Z',
-    'description': 'Having spent some time in the rails and play world I missed a simple yet effective fixtures tool to load data into systems that I work.',
+    'description': 'Having spent some time in the rails and play world I missed ...',
     'homepageUrl': null,
     'pushedAt': '2016-04-30T05:45:55Z',
     'stargazers': 1,

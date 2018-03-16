@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FakeBackendService} from './fake-backend.service';
+// import {FakeBackendService} from './fake-backend.service';
+import {BackendService} from './backend.service';
 
 @Component({
   // selector: 'app-root',
@@ -10,13 +11,17 @@ export class ProjectComponent implements OnInit {
   title = 'app';
   project: any;
 
-  constructor(private backend: FakeBackendService) {
+  constructor(private backend: BackendService) {
 
   }
 
   ngOnInit() {
-    this.backend.project('id').subscribe(
-      proj => this.project = proj
+    this.backend.id('https://github.com/spring-projects/spring-framework').subscribe(
+      res => {
+        console.log(res);
+        this.project = res.data;
+        console.log(this.project);
+      }
     );
   }
 }

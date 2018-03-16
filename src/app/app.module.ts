@@ -7,6 +7,8 @@ import { ProjectComponent } from './project.component';
 import { MetadataComponent } from './metadata.component';
 import { RouterModule } from '@angular/router';
 import { FakeBackendService } from './fake-backend.service';
+import { BackendService } from './backend.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,9 +16,9 @@ import { FakeBackendService } from './fake-backend.service';
     AppComponent, MainComponent, ProjectComponent, MetadataComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(ROUTES)
+    BrowserModule, RouterModule.forRoot(ROUTES), HttpClientModule
   ],
-  providers: [FakeBackendService],
+  providers: [FakeBackendService, BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

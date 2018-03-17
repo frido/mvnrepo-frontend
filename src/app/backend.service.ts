@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class BackendService {
 
-  baseUrl: String = 'http://mvnrepo-backend.herokuapp.com/api';
+  baseUrl: String = 'https://mvnrepo-backend.herokuapp.com/api';
   // baseUrl: String = 'http://localhost:8090/api';
 
   constructor(private http: HttpClient) {   }

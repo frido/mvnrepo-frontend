@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // import {FakeBackendService} from './fake-backend.service';
 import {BackendService} from './backend.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   // selector: 'app-root',
@@ -11,12 +13,15 @@ export class ProjectComponent implements OnInit {
   title = 'app';
   project: any;
 
-  constructor(private backend: BackendService) {
+  constructor(private backend: BackendService, private route: ActivatedRoute) {
 
   }
 
   ngOnInit() {
-    this.backend.id('https://github.com/spring-projects/spring-framework').subscribe(
+    this.route.paramMap.pipe(
+      map((params: ParamMap) => params.get('id')),
+      switchMap(id => this.backend.id(id))
+    ).subscribe(
       res => {
         console.log(res);
         this.project = res.data;

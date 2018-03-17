@@ -1,3 +1,4 @@
+<app-search [showSearch]="true"></app-search>
 <div class="row">
   <div class="col-sm-6">
     <div class="card">
@@ -28,7 +29,7 @@
         <div class="card-text">
           <ul class="list-group">
             <li *ngFor="let project of projects" class="list-group-item justify-content-between">
-              <a href="#">{{project.name}}</a>
+              <a href="" [routerLink]="['project', project._id]">{{project.name}}</a>
               <span class="badge badge-dark badge-pill">{{project.stargazers}} stars</span>
             </li>
           </ul>

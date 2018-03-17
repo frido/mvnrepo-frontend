@@ -6,6 +6,5 @@ import { MetadataComponent } from './metadata.component';
 
 export const ROUTES: Routes = [
   { path: '', component: MainComponent },
-  { path: 'repo', component: ProjectComponent },
-  { path: 'lib', component: MetadataComponent }
+  { path: 'project/:id', component: ProjectComponent }
 ];

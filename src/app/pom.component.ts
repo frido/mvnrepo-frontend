@@ -30,7 +30,7 @@ export class PomComponent implements OnInit {
       debounceTime(500),
       distinctUntilChanged(),
       switchMap(pattern =>
-        this.backend.search('pom', pattern, 10)
+        this.backend.search('pom', pattern, 50)
       )
     ).subscribe(
       res => {

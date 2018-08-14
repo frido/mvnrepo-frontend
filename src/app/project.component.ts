@@ -30,7 +30,7 @@ export class ProjectComponent implements OnInit {
       debounceTime(500),
       distinctUntilChanged(),
       switchMap(pattern =>
-        this.backend.search('projects', pattern, 10)
+        this.backend.search('projects', pattern, 50)
       )
     ).subscribe(
       res => {
@@ -39,7 +39,7 @@ export class ProjectComponent implements OnInit {
         console.log(this.searchResult);
       }
     );
-    this.backend.top('projects', 'stargazers.totalCount', 50).subscribe(
+    this.backend.top('projects', 'stargazers.totalCount', 10).subscribe(
       res => {
         console.log(res);
         this.projects = res.data;

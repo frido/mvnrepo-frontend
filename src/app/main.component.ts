@@ -16,12 +16,6 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.backend.top('stargazers.totalCount', 3).subscribe(
-      res => {
-        console.log(res);
-        this.projects = res.data;
-        console.log(this.projects);
-      }
-    );
+
   }
 }

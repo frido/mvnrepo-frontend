@@ -1,0 +1,32 @@
+<h1>{{project.name}}</h1>
+<div>
+  <span class="badge badge-secondary">{{project.stargazers}} stars</span>
+  <span class="badge badge-secondary">{{project.watchers}} watchers</span>
+  <span class="badge badge-secondary">{{project.forks}} forks</span>
+</div>
+<form>
+  <div class="form-group row">
+    <label for="description" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+      <textarea class="form-control-plaintext" id="description" rows="2">{{project.description}}</textarea>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="homepageUrl" class="col-sm-2 col-form-label">Homepage</label>
+    <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="homepageUrl" value="{{project.homepageUrl}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="createdAt" class="col-sm-2 col-form-label">Created</label>
+    <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="createdAt" value="{{project.createdAt}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="pushedAt" class="col-sm-2 col-form-label">Pushed</label>
+    <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="pushedAt" value="{{project.pushedAt}}">
+    </div>
+  </div>
+</form>

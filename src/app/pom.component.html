@@ -1,0 +1,12 @@
+<div class="input-group">
+    <input (keyup)="search($event.target.value)" type="text" class="form-control" placeholder="Search for...">
+    <span class="input-group-btn">
+      <button class="btn btn-secondary" type="button">Search!</button>
+    </span>
+  </div>
+<div *ngFor="let pom of poms" class="card border-white">
+  <div class="card-body">
+    <a href="" [routerLink]="['/pom', pom._id]"><h5 class="card-title">{{pom.pom.ArtifactId}}</h5></a>
+    <h6 class="card-subtitle mb-2 text-muted">{{pom.pom.Description}}</h6>
+  </div>
+</div>

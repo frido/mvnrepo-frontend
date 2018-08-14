@@ -1,30 +1,6 @@
-<div class="jumbotron">
+<div class="jumbotron" style="margin-bottom: 0">
   <div class="container">
     <h1 class="display-3">Java Libraries</h1>
     <p class="lead">Keep up with the latest news about java libraries</p>
-    <div *ngIf="showSearch == true" class="input-group">
-      <input (keyup)="search($event.target.value)" type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn">
-        <button class="btn btn-secondary" type="button">Search!</button>
-      </span>
-    </div>
-  </div>
-</div>
-<div *ngFor="let result of searchResult" class="row mt-3">
-  <div class="col-sm-12">
-    <div class="row">
-      <div class="col-sm-11">
-        <h3>
-          <a href="" [routerLink]="['project', result._id]">{{result.name}}</a>
-        </h3>
-      </div>
-      <div class="col-sm-1 text-right">
-        <span class="badge badge-secondary">{{result.stargazers}}</span>
-      </div>
-    </div>
-    <div>
-      {{result.description}}
-    </div>
-    <span *ngFor="let artifact of result.artifacts" class="badge badge-primary">{{artifact.groupId}}:{{artifact.artifactId}}:{{artifact.version}}</span>
   </div>
 </div>

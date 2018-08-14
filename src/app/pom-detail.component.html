@@ -1,0 +1,27 @@
+<h1>{{pom.ArtifactId}}</h1>
+<form>
+  <div class="form-group row">
+    <label for="Name" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <textarea class="form-control-plaintext" id="Name" rows="2">{{pom.Name}}</textarea>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="description" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+      <textarea class="form-control-plaintext" id="description" rows="2">{{pom.Description}}</textarea>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="GroupId" class="col-sm-2 col-form-label">GroupId</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="GroupId" value="{{pom.GroupId}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="Version" class="col-sm-2 col-form-label">Version</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="Version" value="{{pom.Version}}">
+    </div>
+  </div>
+</form>

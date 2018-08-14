@@ -10,21 +10,21 @@ export class BackendService {
 
   constructor(private http: HttpClient) {   }
 
-  top(attribute: string, size: number): Observable<any> {
+  top(schema: string, attribute: string, size: number): Observable<any> {
     // ?attribute=stargazers.totalCount&size=50
     const params = new HttpParams().set('attribute', attribute).set('size', size.toString());
-    return this.http.get(this.baseUrl + '/projects/top', { params });
+    return this.http.get(this.baseUrl + '/' + schema + '/top', { params });
   }
 
-  search(pattern: string, size: number): Observable<any> {
+  search(schema: string, pattern: string, size: number): Observable<any> {
     // ?pattern=test&size=50
     const params = new HttpParams().set('pattern', pattern).set('size', size.toString());
-    return this.http.get(this.baseUrl + '/projects/search', { params });
+    return this.http.get(this.baseUrl + '/' + schema + '/search', { params });
   }
 
-  id(id: string): Observable<any> {
+  id(schema: string, id: string): Observable<any> {
     // ?attribute=stargazers.totalCount&size=50
     const params = new HttpParams().set('id', id);
-    return this.http.get(this.baseUrl + '/projects/id', { params });
+    return this.http.get(this.baseUrl + '/' + schema + '/id', { params });
   }
 }

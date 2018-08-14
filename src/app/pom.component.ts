@@ -6,11 +6,11 @@ import { Subject } from 'rxjs/Subject';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
-  templateUrl: './project.component.html'
+  templateUrl: './pom.component.html'
 })
-export class ProjectComponent implements OnInit {
+export class PomComponent implements OnInit {
   title = 'app';
-  projects: any;
+  poms: any;
   searchResult: Array<any>;
   searchText$ = new Subject<string>();
 
@@ -30,20 +30,20 @@ export class ProjectComponent implements OnInit {
       debounceTime(500),
       distinctUntilChanged(),
       switchMap(pattern =>
-        this.backend.search('projects', pattern, 10)
+        this.backend.search('pom', pattern, 10)
       )
     ).subscribe(
       res => {
         console.log(res);
-        this.projects = res.data;
+        this.poms = res.data;
         console.log(this.searchResult);
       }
     );
-    this.backend.top('projects', 'stargazers.totalCount', 50).subscribe(
+    this.backend.top('pom', 'stargazers.totalCount', 10).subscribe(
       res => {
         console.log(res);
-        this.projects = res.data;
-        console.log(this.projects);
+        this.poms = res.data;
+        console.log(this.poms);
       }
     );
   }

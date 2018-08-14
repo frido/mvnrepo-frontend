@@ -1,30 +1,15 @@
-<app-search [showSearch]="false"></app-search>
-<div  class="row">
-  <div class="col-sm-12">
-    <div class="row">
-      <div class="col-sm-8">
-        <h3>
-          {{project.name}}
-        </h3>
-      </div>
-      <div class="col-sm-4 text-right">
-        <span class="badge badge-secondary">{{project.stargazers}} stars</span>
+<div class="input-group">
+    <input (keyup)="search($event.target.value)" type="text" class="form-control" placeholder="Search for...">
+    <span class="input-group-btn">
+      <button class="btn btn-secondary" type="button">Search!</button>
+    </span>
+  </div>
+<div *ngFor="let project of projects" class="card border-white">
+  <div class="card-body">
+    <a href="" [routerLink]="['/project', project._id]"><h5 class="card-title">{{project.name}}</h5></a>
+    <h6 class="card-subtitle mb-2 text-muted">{{project.description}}</h6>
+    <span class="badge badge-secondary">{{project.stargazers}} stars</span>
         <span class="badge badge-secondary">{{project.watchers}} watchers</span>
         <span class="badge badge-secondary">{{project.forks}} forks</span>
-      </div>
-    </div>
-    <div>
-      {{project.description}}
-    </div>
-    <span *ngFor="let artifact of project.artifacts" class="badge badge-primary">{{artifact.groupId}}:{{artifact.artifactId}}:{{artifact.version}}</span>
   </div>
-  <div class="col-sm-12">
-      <strong>Home page: </strong>{{project.homepageUrl}}
-    </div>
-  <div class="col-sm-12">
-    <strong>Created at: </strong>{{project.createdAt}}
-  </div>
-  <div class="col-sm-12">
-      <strong>Pushed at: </strong>{{project.pushedAt}}
-    </div>
 </div>

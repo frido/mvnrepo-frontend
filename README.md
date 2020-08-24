@@ -1,6 +1,6 @@
-# !!! Actualize
+# Mvnrepo Frontend
 
-# MvnrepoFrontend
+[Angular-CLI](https://cli.angular.io/) web application simply displays search results of Java artifacts.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
 
